@@ -51,6 +51,7 @@ streamlit run dashboard.py
 - Deploy effortlessly on [Streamlit Community Cloud](https://streamlit.io/cloud)by linking your GitHub repo.
 
 - Ensure all dependencies are listed in ```requirements.txt```.
+- You can try the demo[here](https://job-category-alert-app-dkvbeaw9jmsmcjuk2hjdwf.streamlit.app/)
  ## 🤝 Contributions & Contact
 Feel free to open an issue or submit a pull request!
 Reach out if you need help or want to collaborate.
