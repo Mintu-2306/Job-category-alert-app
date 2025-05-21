@@ -48,9 +48,9 @@ streamlit run dashboard.py
 ## ☁️ Deployment
 - Push your complete project (including ```dashboard.py, jobs.csv, predicted_cluster.py, and requirements.txt```) to GitHub.
 
-- Deploy effortlessly on ```Streamlit Community Cloud ```by linking your GitHub repo.
+- Deploy effortlessly on [Streamlit Community Cloud](https://streamlit.io/cloud)by linking your GitHub repo.
 
 - Ensure all dependencies are listed in ```requirements.txt```.
-  ## 🤝 Contributions & Contact
+ ## 🤝 Contributions & Contact
 Feel free to open an issue or submit a pull request!
 Reach out if you need help or want to collaborate.
