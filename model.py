@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 from sklearn.ensemble import RandomForestClassifier
-
+from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
 # Step 1: Load scraped jobs data
 df = pd.read_csv("jobs.csv")
 df['Skills'] = df['Skills'].fillna('').astype(str)
@@ -39,6 +39,14 @@ plot_elbow(X, max_k=10)
 optimal_k = 5  
 kmeans = KMeans(n_clusters=optimal_k, random_state=42)
 df['Cluster'] = kmeans.fit_predict(X)
+
+
+# 🧠 Evaluate Clustering
+print("\n📊 Clustering Evaluation Metrics:")
+print(f"Inertia (WCSS): {kmeans.inertia_:.2f}")
+print(f"Silhouette Score: {silhouette_score(X, df['Cluster']):.4f}")
+print(f"Calinski-Harabasz Index: {calinski_harabasz_score(X.toarray(), df['Cluster']):.2f}")
+print(f"Davies-Bouldin Index: {davies_bouldin_score(X.toarray(), df['Cluster']):.4f}")
 
 # Step 5: Train classifier for future prediction
 clf = RandomForestClassifier(random_state=42)
