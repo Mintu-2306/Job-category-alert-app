@@ -1,15 +1,26 @@
 import streamlit as st
 import pandas as pd
+import os
 from predicted_cluster import predict_job_category
 
 st.set_page_config(page_title="Job Alerts Dashboard", page_icon="🔍", layout="wide")
 
 st.title("🔍 Job Category Alert Dashboard")
 
+# Get current script directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Path to jobs.csv in the same folder
+jobs_csv_path = os.path.join(BASE_DIR, "jobs.csv")
+
+# Debug info to help confirm file path
+st.write("Looking for jobs.csv at:", jobs_csv_path)
+st.write("File exists:", os.path.exists(jobs_csv_path))
+
 # Load jobs dataset
 @st.cache_data
 def load_jobs():
-    return pd.read_csv("jobs.csv")
+    return pd.read_csv(jobs_csv_path)
 
 jobs = load_jobs()
 
