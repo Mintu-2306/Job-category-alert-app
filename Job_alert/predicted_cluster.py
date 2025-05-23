@@ -1,9 +1,9 @@
 import joblib
 
 # Load models
-vectorizer = joblib.load("models/tfidf_vectorizer.pkl")
-kmeans = joblib.load("models/kmeans_model.pkl")
-clf = joblib.load("models/cluster_classifier.pkl")
+vectorizer = joblib.load("Job_alert/models/tfidf_vectorizer.pkl")
+kmeans = joblib.load("Job_alert/models/kmeans_model.pkl")
+clf = joblib.load("Job_alert/models/cluster_classifier.pkl")
 
 def predict_job_category(skills_text):
     X_new = vectorizer.transform([skills_text])
