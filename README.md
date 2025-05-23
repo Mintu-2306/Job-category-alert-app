@@ -12,13 +12,19 @@ A Streamlit dashboard that classifies job listings by skill sets into categories
 - Clean, user-friendly interface built with Streamlit.
 ## 📂 Project Structure
 ```bash
-Job-category-alert-app/
-│
-├── dashboard.py            # Main Streamlit application
-├── jobs.csv                # Job listings dataset
-├── predicted_cluster.py    # ML prediction logic for job categories
-├── requirements.txt        # Python dependencies
-└── README.md               # This documentation
+📁 Job-category-alert-app/
+├── Job_alert/
+│   ├── __init__.py
+│   ├── dashboard.py              # Streamlit dashboard
+│   ├── predicted_cluster.py      # ML prediction logic
+│   ├── jobs.csv                  # Dataset of job listings
+│   └── models/                   # Trained ML models
+│       ├── tfidf_vectorizer.pkl
+│       ├── kmeans_model.pkl
+│       └── cluster_classifier.pkl
+├── README.md
+├── requirements.txt
+
 ```
 ## ⚙️ Setup & Installation
 1. Clone the repository
