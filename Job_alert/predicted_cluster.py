@@ -1,9 +1,14 @@
+import os
 import joblib
 
-# Load models
-vectorizer = joblib.load("models/tfidf_vectorizer.pkl")
-kmeans = joblib.load("models/kmeans_model.pkl")
-clf = joblib.load("models/cluster_classifier.pkl")
+# Get the directory where this script is located (Job_alert/)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+
+# Load models using absolute paths
+vectorizer = joblib.load(os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl"))
+kmeans = joblib.load(os.path.join(MODEL_DIR, "kmeans_model.pkl"))
+clf = joblib.load(os.path.join(MODEL_DIR, "cluster_classifier.pkl"))
 
 def predict_job_category(skills_text):
     X_new = vectorizer.transform([skills_text])
